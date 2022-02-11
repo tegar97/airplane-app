@@ -5,7 +5,12 @@ class CustumTextFormField extends StatelessWidget {
   final String title;
   final String hintText;
   final bool obsecure;
-  const CustumTextFormField({Key? key,required this.title,required this.hintText,this.obsecure=false}) : super(key: key);
+  const CustumTextFormField(
+      {Key? key,
+      required this.title,
+      required this.hintText,
+      this.obsecure = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

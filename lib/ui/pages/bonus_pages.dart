@@ -92,7 +92,7 @@ class BonusPage extends StatelessWidget {
       return CustomButton(
         title: 'Get Started',
         width: 220,
-        margin: EdgeInsets.only(top:50),
+        margin: EdgeInsets.only(top: 50),
         onPressed: () {
           Navigator.pushNamed(context, '/main-page');
         },

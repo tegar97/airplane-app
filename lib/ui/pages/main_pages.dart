@@ -1,3 +1,4 @@
+import 'package:airplane/ui/pages/home_pages.dart';
 import 'package:airplane/ui/widget/custum_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,10 @@ import '../../shared/theme.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
+
+  Widget BuildContent() {
+    return HomePage();
+  }
 
   Widget custumBottomNavigation() {
     return Align(
@@ -35,7 +40,7 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: Stack(
-        children: [Text('Main Page2'), custumBottomNavigation()],
+        children: [BuildContent(), custumBottomNavigation()],
       ),
     );
   }

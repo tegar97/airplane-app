@@ -19,9 +19,6 @@ class SignUpPage extends StatelessWidget {
     }
 
     Widget InputSection() {
-      
-
-     
       return Container(
         margin: EdgeInsets.only(top: 30),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
@@ -30,11 +27,15 @@ class SignUpPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(defaultRadius)),
         child: Column(
           children: [
-            CustumTextFormField(title: 'Full Name',hintText: 'Your full name'),
-            CustumTextFormField(title: 'Email Address',hintText: 'Your email adress'),
-            CustumTextFormField(title: 'Your password',hintText: 'Your password',obsecure: true,),
-            CustumTextFormField(title: 'Email Address',hintText: 'Your email adress'),
-          
+            CustumTextFormField(title: 'Full Name', hintText: 'Your full name'),
+            CustumTextFormField(
+                title: 'Email Address', hintText: 'Your email adress'),
+            CustumTextFormField(
+              title: 'password',
+              hintText: 'Your password',
+              obsecure: true,
+            ),
+            CustumTextFormField(title: 'Hobby', hintText: 'Your Hobby'),
             SizedBox(height: 20),
             CustomButton(
               title: 'Get Started',

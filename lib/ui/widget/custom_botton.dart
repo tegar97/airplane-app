@@ -19,10 +19,9 @@ class CustomButton extends StatelessWidget {
     return Container(
       width: width,
       height: 55,
-      margin:  margin,
+      margin: margin,
       child: TextButton(
-        onPressed:onPressed,
-        
+        onPressed: onPressed,
         child: Text('Get Started',
             style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium)),
         style: TextButton.styleFrom(
