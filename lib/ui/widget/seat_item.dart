@@ -57,7 +57,7 @@ class SeatItem extends StatelessWidget {
       height: 48,
       child: child(),
       decoration: BoxDecoration(
-          border: Border.all(color: borderColor(),width: 2),
+          border: Border.all(color: borderColor(), width: 2),
           color: backgroundColor(),
           borderRadius: BorderRadius.circular(15)),
     );

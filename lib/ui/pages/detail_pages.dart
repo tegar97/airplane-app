@@ -217,8 +217,6 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
-
-          
           ],
         ),
       );
