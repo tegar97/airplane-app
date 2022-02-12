@@ -13,12 +13,15 @@ Color kInactiveColor = Color(0xffDBD7EC);
 Color kBlackColor = Color(0xff1F1449);
 Color kWhiteColor = Color(0xffFFFFFF);
 Color Ktransparent = Colors.transparent;
+Color KUnavailableColor = Color(0xffEBECF1);
+Color KAvailableColor = Color(0xffE0D9FF);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(color: kBlackColor);
 TextStyle whiteTextStyle = GoogleFonts.poppins(color: kWhiteColor);
 TextStyle greyTextStyle = GoogleFonts.poppins(color: kGreyColor);
 TextStyle greenTextStyle = GoogleFonts.poppins(color: kGreenColor);
 TextStyle redTextStyle = GoogleFonts.poppins(color: kRedColor);
+TextStyle purpleTextStyle = GoogleFonts.poppins(color: kPrimaryColor);
 
 FontWeight light = FontWeight.w300;
 FontWeight regular = FontWeight.w400;

@@ -22,7 +22,7 @@ class CustomButton extends StatelessWidget {
       margin: margin,
       child: TextButton(
         onPressed: onPressed,
-        child: Text('Get Started',
+        child: Text(title,
             style: whiteTextStyle.copyWith(fontSize: 18, fontWeight: medium)),
         style: TextButton.styleFrom(
             backgroundColor: kPrimaryColor,
