@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "628394565437",
+    "project_id": "airplane-7102c",
+    "storage_bucket": "airplane-7102c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628394565437:android:3b9b6dc1b43a6c23476f54",
+        "android_client_info": {
+          "package_name": "com.tegar.airplane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628394565437-8q8ufubq1n2uv3osomqedlcdl7h9stuf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBYQpzS04umCVkBGK0qwPL-QtRlfD2faU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628394565437-8q8ufubq1n2uv3osomqedlcdl7h9stuf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

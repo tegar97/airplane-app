@@ -1,14 +1,30 @@
+import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/ui/pages/home_pages.dart';
+import 'package:airplane/ui/pages/settings_pages.dart';
+import 'package:airplane/ui/pages/transaction_pages.dart';
+import 'package:airplane/ui/pages/wallet_pages.dart';
 import 'package:airplane/ui/widget/custum_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../shared/theme.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
-  Widget BuildContent() {
-    return HomePage();
+  Widget BuildContent(int currentIndex) {
+    switch (currentIndex) {
+      case 0:
+        return HomePage();
+      case 1:
+        return TransactionPages();
+      case 2:
+        return WalletPages();
+      case 3:
+        return SettingPages();
+      default:
+        return HomePage();
+    }
   }
 
   Widget custumBottomNavigation() {
@@ -25,10 +41,11 @@ class MainPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CustumBottomNavigation(
+                index: 0,
                 imageUrl: 'assets/icon_home.png', isSelected: true),
-            CustumBottomNavigation(imageUrl: 'assets/icon_booking.png'),
-            CustumBottomNavigation(imageUrl: 'assets/icon_card.png'),
-            CustumBottomNavigation(imageUrl: 'assets/icon_settings.png'),
+            CustumBottomNavigation(index:1,imageUrl: 'assets/icon_booking.png'),
+            CustumBottomNavigation(index:2,imageUrl: 'assets/icon_card.png'),
+            CustumBottomNavigation(index:3,imageUrl: 'assets/icon_settings.png'),
           ],
         ),
       ),
@@ -37,11 +54,15 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: kBackgroundColor,
-      body: Stack(
-        children: [BuildContent(), custumBottomNavigation()],
-      ),
+    return BlocBuilder<PageCubit, int>(
+      builder: (context, currentIndex) {
+        return Scaffold(
+          backgroundColor: kBackgroundColor,
+          body: Stack(
+            children: [BuildContent(currentIndex), custumBottomNavigation()],
+          ),
+        );
+      },
     );
   }
 }
