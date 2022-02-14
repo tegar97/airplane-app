@@ -5,8 +5,8 @@ import 'package:airplane/ui/widget/custum_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SignUpPage extends StatelessWidget {
-  SignUpPage({Key? key}) : super(key: key);
+class SignInPage extends StatelessWidget {
+  SignInPage({Key? key}) : super(key: key);
 
   final TextEditingController nameController = TextEditingController(text: '');
   final TextEditingController emailController = TextEditingController(text: '');
@@ -45,7 +45,7 @@ class SignUpPage extends StatelessWidget {
             );
           }
           return CustomButton(
-            title: 'Get Started',
+            title: 'Sign in',
             width: 220,
             onPressed: () {
               context.read<AuthCubit>().signUp(
@@ -69,11 +69,6 @@ class SignUpPage extends StatelessWidget {
         child: Column(
           children: [
             CustumTextFormField(
-              title: 'Full Name',
-              hintText: 'Your full name',
-              controller: nameController,
-            ),
-            CustumTextFormField(
               title: 'Email Address',
               hintText: 'Your email adress',
               controller: emailController,
@@ -83,11 +78,6 @@ class SignUpPage extends StatelessWidget {
               hintText: 'Your password',
               obsecure: true,
               controller: passwordController,
-            ),
-            CustumTextFormField(
-              title: 'Hobby',
-              hintText: 'Your Hobby',
-              controller: hobbyController,
             ),
             SizedBox(height: 20),
             submitButton()
@@ -99,16 +89,19 @@ class SignUpPage extends StatelessWidget {
     Widget tacButton() {
       return GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, '/sign-in');
+          Navigator.pop(context);
         },
         child: Container(
-            alignment: Alignment.center,
-            child: Text('Have an account? Sign in',
-                style: greyTextStyle.copyWith(
-                    fontSize: 16,
-                    fontWeight: light,
-                    decoration: TextDecoration.underline)),
-            margin: EdgeInsets.only(top: 50, bottom: 73)),
+          alignment: Alignment.center,
+          child: Container(
+              alignment: Alignment.center,
+              child: Text('Don\'t have an account ? Sign up',
+                  style: greyTextStyle.copyWith(
+                      fontSize: 16,
+                      fontWeight: light,
+                      decoration: TextDecoration.underline)),
+              margin: EdgeInsets.only(top: 50, bottom: 73)),
+        ),
       );
     }
 

@@ -24,18 +24,21 @@ class CustumBottomNavigation extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SizedBox(),
-            Image.asset(imageUrl,width: 24,height: 24,
+          Image.asset(
+            imageUrl,
+            width: 24,
+            height: 24,
             color: context.read<PageCubit>().state == index
                 ? kPrimaryColor
                 : kGreyColor,
           ),
-       
-         
           Container(
             width: 30,
             height: 2,
             decoration: BoxDecoration(
-                color: context.read<PageCubit>().state == index ? kPrimaryColor : kWhiteColor,
+                color: context.read<PageCubit>().state == index
+                    ? kPrimaryColor
+                    : kWhiteColor,
                 borderRadius: BorderRadius.circular(18)),
           )
         ],

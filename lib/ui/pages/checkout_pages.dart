@@ -237,9 +237,12 @@ class CheckoutPage extends StatelessWidget {
 
     Widget PayNowButton() {
       return CustomButton(
-          title: 'Pay Now', onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder:  (context) => SuccessCheckoutPage()));
-          }, margin: EdgeInsets.only(top: 30));
+          title: 'Pay Now',
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SuccessCheckoutPage()));
+          },
+          margin: EdgeInsets.only(top: 30));
     }
 
     Widget tacButton() {
@@ -253,14 +256,17 @@ class CheckoutPage extends StatelessWidget {
           margin: EdgeInsets.only(top: 30, bottom: 30));
     }
 
-
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: defaultMargin),
-        children: [route(), BookingDetails(), paymentDetails(), PayNowButton(),
-          tacButton
-        ()],
+        children: [
+          route(),
+          BookingDetails(),
+          paymentDetails(),
+          PayNowButton(),
+          tacButton()
+        ],
       ),
     );
   }

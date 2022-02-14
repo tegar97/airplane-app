@@ -41,11 +41,12 @@ class MainPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             CustumBottomNavigation(
-                index: 0,
-                imageUrl: 'assets/icon_home.png', isSelected: true),
-            CustumBottomNavigation(index:1,imageUrl: 'assets/icon_booking.png'),
-            CustumBottomNavigation(index:2,imageUrl: 'assets/icon_card.png'),
-            CustumBottomNavigation(index:3,imageUrl: 'assets/icon_settings.png'),
+                index: 0, imageUrl: 'assets/icon_home.png', isSelected: true),
+            CustumBottomNavigation(
+                index: 1, imageUrl: 'assets/icon_booking.png'),
+            CustumBottomNavigation(index: 2, imageUrl: 'assets/icon_card.png'),
+            CustumBottomNavigation(
+                index: 3, imageUrl: 'assets/icon_settings.png'),
           ],
         ),
       ),
