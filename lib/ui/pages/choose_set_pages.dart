@@ -1,5 +1,6 @@
 import 'package:airplane/cubit/seat_cubit.dart';
 import 'package:airplane/models/destination_model.dart';
+import 'package:airplane/models/transaction_model.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/checkout_pages.dart';
 import 'package:airplane/ui/widget/custom_botton.dart';
@@ -10,7 +11,7 @@ import 'package:intl/intl.dart';
 
 class ChooseSetPage extends StatelessWidget {
   final DestinationModel destinations;
-  const ChooseSetPage(this.destinations,{Key? key}) : super(key: key);
+  const ChooseSetPage(this.destinations, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -243,7 +244,6 @@ class ChooseSetPage extends StatelessWidget {
                       ),
                       Text(
                         state.join(', '),
-                        
                         style: blackTextStyle.copyWith(fontWeight: medium),
                       ),
                     ],
@@ -259,7 +259,9 @@ class ChooseSetPage extends StatelessWidget {
                         style: greyTextStyle.copyWith(fontWeight: light),
                       ),
                       Text(
-                        NumberFormat.currency(locale: 'id',symbol: 'IDR',decimalDigits: 0).format(state.length * destinations.price),
+                        NumberFormat.currency(
+                                locale: 'id', symbol: 'IDR', decimalDigits: 0)
+                            .format(state.length * destinations.price),
                         style: purpleTextStyle.copyWith(fontWeight: semiBold),
                       ),
                     ],
@@ -273,13 +275,28 @@ class ChooseSetPage extends StatelessWidget {
     }
 
     Widget checkoutButton() {
-      return CustomButton(
-        title: 'Continue to checkout',
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => CheckoutPage()));
+      return BlocBuilder<SeatCubit, List<String>>(
+        builder: (context, state) {
+          return CustomButton(
+            title: 'Continue to checkout',
+            onPressed: () {
+              int price = destinations.price * state.length;
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CheckoutPage(TransactionModel(
+                          destination: destinations,
+                          amoutOfTraveler: state.length,
+                          selectedSeats: state.join(', '),
+                          insurance: true,
+                          refundable: false,
+                          price: price,
+                          vat: 0.45,
+                          grandTotal: price + (price *0.45).toInt()))));
+            },
+            margin: EdgeInsets.only(top: 30, bottom: 46),
+          );
         },
-        margin: EdgeInsets.only(top: 30, bottom: 46),
       );
     }
 
