@@ -1,19 +1,14 @@
+import 'package:airplane/models/destination_model.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/pages/detail_pages.dart';
 import 'package:flutter/material.dart';
 
 class DestinationCard extends StatelessWidget {
-  final String name;
-  final String city;
-  final String imageUrl;
-  final double rating;
+  final DestinationModel destinations;
 
   const DestinationCard(
-      {Key? key,
-      required this.name,
-      required this.city,
-      required this.imageUrl,
-      this.rating = 0.0})
+    this.destinations,
+      {Key? key})
       : super(key: key);
 
   @override
@@ -21,7 +16,7 @@ class DestinationCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DetailPage()));
+            context, MaterialPageRoute(builder: (context) => DetailPage(destinations)));
       },
       child: Container(
         width: 200,
@@ -38,7 +33,7 @@ class DestinationCard extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 20),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  image: DecorationImage(image: AssetImage(imageUrl))),
+                  image: DecorationImage(image: NetworkImage(destinations.imageUrl))),
               child: Align(
                 alignment: Alignment.topRight,
                 child: Container(
@@ -60,7 +55,7 @@ class DestinationCard extends StatelessWidget {
                             image: DecorationImage(
                                 image: AssetImage('assets/icon_star.png'))),
                       ),
-                      Text(rating.toString(),
+                      Text(destinations.rating.toString(),
                           style: blackTextStyle.copyWith(fontWeight: medium))
                     ],
                   ),
@@ -73,14 +68,14 @@ class DestinationCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      name,
+                      destinations.name,
                       style: blackTextStyle.copyWith(
                           fontSize: 18, fontWeight: medium),
                     ),
                     SizedBox(
                       height: 5,
                     ),
-                    Text(city, style: greyTextStyle.copyWith(fontWeight: light))
+                    Text(destinations.city, style: greyTextStyle.copyWith(fontWeight: light))
                   ],
                 ))
           ],

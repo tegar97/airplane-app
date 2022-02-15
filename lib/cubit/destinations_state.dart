@@ -16,6 +16,7 @@ class DestinationSuccess extends DestinationsState {
 
   DestinationSuccess(this.destinations);
 
+
   @override
   List<Object> get props => [destinations];
 }

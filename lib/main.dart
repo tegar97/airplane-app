@@ -1,4 +1,5 @@
 import 'package:airplane/cubit/auth_cubit.dart';
+import 'package:airplane/cubit/destinations_cubit.dart';
 import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/ui/pages/bonus_pages.dart';
 import 'package:airplane/ui/pages/get_started_pages.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => PageCubit()),
-        BlocProvider(create: (context) => AuthCubit())
+        BlocProvider(create: (context) => AuthCubit()),
+        BlocProvider(create: (context) => DestinationsCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
