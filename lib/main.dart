@@ -2,12 +2,14 @@ import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:airplane/cubit/destinations_cubit.dart';
 import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/cubit/seat_cubit.dart';
+import 'package:airplane/cubit/transaction_cubit.dart';
 import 'package:airplane/ui/pages/bonus_pages.dart';
 import 'package:airplane/ui/pages/get_started_pages.dart';
 import 'package:airplane/ui/pages/main_pages.dart';
 import 'package:airplane/ui/pages/sign_in_pages.dart';
 import 'package:airplane/ui/pages/sign_up_dart_pages.dart';
 import 'package:airplane/ui/pages/splash_page.dart';
+import 'package:airplane/ui/pages/success_checkout_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,6 +32,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => AuthCubit()),
         BlocProvider(create: (context) => DestinationsCubit()),
         BlocProvider(create: (context) => SeatCubit()),
+        BlocProvider(create: (context) => TransactionCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -40,6 +43,7 @@ class MyApp extends StatelessWidget {
           '/sign-in': (context) => SignInPage(),
           '/bonus': (context) => BonusPage(),
           '/main-page': (context) => MainPage(),
+          '/success': (context) => SuccessCheckoutPage(),
         },
       ),
     );
