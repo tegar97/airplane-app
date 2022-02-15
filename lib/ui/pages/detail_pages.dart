@@ -217,7 +217,7 @@ class DetailPage extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ChooseSetPage()));
+                                builder: (context) => ChooseSetPage(destinations)));
                       },
                       width: 170)
                 ],
