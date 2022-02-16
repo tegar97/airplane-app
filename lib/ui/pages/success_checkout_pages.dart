@@ -40,7 +40,7 @@ class SuccessCheckoutPage extends StatelessWidget {
               onPressed: () {
                 context.read<PageCubit>().setPage(1);
                 Navigator.pushNamedAndRemoveUntil(
-                    context, '/main', (route) => false);
+                    context, '/main-page', (route) => false);
               },
               width: 220,
               margin: EdgeInsets.only(top: 50))

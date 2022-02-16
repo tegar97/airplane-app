@@ -1,5 +1,4 @@
 import 'package:airplane/models/transaction_model.dart';
-import 'package:airplane/models/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class TransactionService {
@@ -23,5 +22,19 @@ class TransactionService {
     }
   }
 
-  
+  Future<List<TransactionModel>> fetchTransaction() async {
+    try {
+      print(await _transactionRefrence.get());
+      QuerySnapshot result = await _transactionRefrence.get();
+      List<TransactionModel> transactions = result.docs.map((e) {
+        return TransactionModel.fromJson(
+            e.id, e.data() as Map<String, dynamic>);
+      }).toList();
+      print(transactions);
+
+      return transactions;
+    } catch (e) {
+      throw e;
+    }
+  }
 }

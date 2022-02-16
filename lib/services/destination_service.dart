@@ -2,12 +2,12 @@ import 'package:airplane/models/destination_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DestinationService {
-  CollectionReference _destinationRef =
+  CollectionReference _destinationRefrence =
       FirebaseFirestore.instance.collection('destinations');
 
   Future<List<DestinationModel>> fetchDestinations() async {
     try {
-      QuerySnapshot result = await _destinationRef.get();
+      QuerySnapshot result = await _destinationRefrence.get();
 
       List<DestinationModel> destinations = result.docs.map((e) {
         return DestinationModel.fromJson(
@@ -19,4 +19,7 @@ class DestinationService {
       throw e;
     }
   }
+
+
+
 }
