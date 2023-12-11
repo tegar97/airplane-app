@@ -1,16 +1,12 @@
-# airplane
+# airplane 
 
-A new Flutter project.
 
-## Getting Started
+Airplane is an application for booking airplane tickets easily and quickly This application uses firebase auth for system auth and firestore to store destination, ticket and ticket order data.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Screenshoot
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Cover](https://ik.imagekit.io/akutegar/akutegar/airplane/Cover.png?updatedAt=1702307656128)
+![Auth Flow ](https://ik.imagekit.io/akutegar/akutegar/airplane/1.png?updatedAt=1702307656800)
+![Select destination and seat ](https://ik.imagekit.io/akutegar/akutegar/airplane/2.png?updatedAt=1702307656687)
+![Booking](https://ik.imagekit.io/akutegar/akutegar/airplane/3.png?updatedAt=1702307656142)
